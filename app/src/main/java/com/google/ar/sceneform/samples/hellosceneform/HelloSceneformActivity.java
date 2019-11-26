@@ -61,7 +61,7 @@ public class HelloSceneformActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_ux);
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
-        String url = "https://firebasestorage.googleapis.com/v0/b/pf-asset-holder.appspot.com/o/25%20nov%2FsodaDraco.glb?alt=media&token=80550c45-e14b-46db-9948-1d18a6744e2d";
+        String url = "https://github.com/KhronosGroup/glTF-Sample-Models/blob/master/2.0/Duck/glTF-Draco/Duck.gltf";
         // When you build a Renderable, Sceneform loads its resources in the background while returning
         // a CompletableFuture. Call thenAccept(), handle(), or check isDone() before calling get().
         ModelRenderable.builder()
@@ -69,8 +69,8 @@ public class HelloSceneformActivity extends AppCompatActivity {
                 .setSource(this, RenderableSource.builder().setSource(
                         this,
                         Uri.parse(url),
-                        RenderableSource.SourceType.GLB)
-                        .setScale(0.0256f)
+                        RenderableSource.SourceType.GLTF2)
+                       // .setScale(0.0256f)
                           // Scale the original model to 50%.
                      //   .setRecenterMode(RenderableSource.RecenterMode.ROOT)
                         .build())
